@@ -1,6 +1,6 @@
 code:
     image: alpine
-    volume:
+    volumes:
         - /code
     command: echo "Meow"
 
