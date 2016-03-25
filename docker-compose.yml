@@ -23,6 +23,6 @@ nginx:
 php:
     build: ./php/.
     volumes:
-        - code:/var/www/
+        - code:/var/www/html
     volumes_from:
         - code:rw
