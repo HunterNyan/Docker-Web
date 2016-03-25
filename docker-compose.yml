@@ -12,7 +12,7 @@ nginx:
     volumes:
         - code:/var/www/
     volumes_from:
-        - code:r
+        - code:ro
     links:
         - php
 php:
