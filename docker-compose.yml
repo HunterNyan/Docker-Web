@@ -22,7 +22,7 @@ nginx:
         - php
 php:
     build: ./php/.
-    workdir: /var/www
+    working_dir: /var/www
     volumes:
         - code:/var/www
     volumes_from:
