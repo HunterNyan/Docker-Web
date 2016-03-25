@@ -6,7 +6,7 @@ if [ -d /root/tmp/web-test.git ]; then
 	git pull
 else
 	git clone https://github.com/HunterNyan/web-test.git
+	cd ./*
 fi
-cd ./*
 rm -fr /var/www/*
 mv -f * /var/www/ 
