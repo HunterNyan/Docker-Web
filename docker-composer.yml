@@ -1,0 +1,23 @@
+code:
+    image: alpine
+    volume:
+        - /code
+    command: echo "Meow"
+
+nginx:
+    build: ./nginx/.
+    ports:
+        - "80:80"
+        - "443:443"
+    volumes:
+        - code:/var/www/
+    volumes_from:
+        - code:r
+    links:
+        - php
+php:
+    build: ./php/.
+    volumes:
+        - code:/var/www/
+    volumes_from:
+        - code:rw
