@@ -7,4 +7,6 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) iconv mcrypt \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd
+RUN ln -sf /dev/stderr /var/log/fpm-access.log
+RUN ln -sf /dev/stderr /var/log/fpm-error.log
 COPY zz-docker.conf /usr/local/etc/php-fpm.d/
