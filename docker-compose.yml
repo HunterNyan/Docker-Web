@@ -3,7 +3,12 @@ code:
     volumes:
         - /code
     command: echo "Meow"
-
+codepull:
+    build: ./codepull/.
+    volumes:
+        - code:/var/www/
+    volumes_from:
+        - code:rw
 nginx:
     build: ./nginx/.
     ports:
